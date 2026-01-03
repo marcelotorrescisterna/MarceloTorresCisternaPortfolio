@@ -1,0 +1,37 @@
+# buildspec.yml
+version: 0.2
+
+env:
+  variables:
+    APP_NAME: "codebuild-basics"
+    APP_ENV: "dev"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo "== INSTALL =="
+      - python --version
+  pre_build:
+    commands:
+      - echo "== PRE_BUILD =="
+      - echo "Current working directory (PWD):"
+      - pwd
+      - ls -la
+      - test -f src/main.py
+  build:
+    commands:
+      - echo "== BUILD =="
+      - python src/main.py
+      - echo "Contents of dist/:"
+      - ls -la dist
+  post_build:
+    commands:
+      - echo "== POST_BUILD =="
+      - echo "Build completed at $(date -u)"
+
+artifacts:
+  files:
+    - dist/**/*
+  discard-paths: no
