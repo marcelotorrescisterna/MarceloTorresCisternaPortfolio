@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  margin: 6px 0;
+}
+
+.user {
+  justify-content: flex-end;
+}
+
+.assistant {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 78%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
+
+.user .bubble {
+  background: #1f2937;
+  color: white;
+}
+
+.assistant .bubble {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.time {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 6px;
+  text-align: right;
+}
