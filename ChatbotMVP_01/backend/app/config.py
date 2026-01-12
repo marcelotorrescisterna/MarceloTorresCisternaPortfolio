@@ -5,11 +5,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 ENV_PATH = BASE_DIR / ".env"
 
-print("✅ BASE_DIR =", BASE_DIR)
-print("✅ ENV_PATH =", ENV_PATH)
-print("✅ ENV exists? =", ENV_PATH.exists())
-if ENV_PATH.exists():
-    print("✅ ENV first lines =", ENV_PATH.read_text(encoding="utf-8")[:200])
+# print("✅ BASE_DIR =", BASE_DIR)
+# print("✅ ENV_PATH =", ENV_PATH)
+# print("✅ ENV exists? =", ENV_PATH.exists())
+#if ENV_PATH.exists():
+    #print("✅ ENV first lines =", ENV_PATH.read_text(encoding="utf-8")[:200])
 
 loaded = load_dotenv(dotenv_path=ENV_PATH, override=True)
 #print("✅ load_dotenv loaded? =", loaded)
