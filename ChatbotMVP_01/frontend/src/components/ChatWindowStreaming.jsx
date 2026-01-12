@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { getOrCreateSessionId } from "../utils/session";
-import { streamChatMessage } from "../api/chatAPIStream";
+import { streamChatMessage } from "../api/chatApiStream";
 import MessageBubble from "./MessageBubble";
 import TypingIndicator from "./TypingIndicator";
 import styles from "./ChatWindow.module.css";
