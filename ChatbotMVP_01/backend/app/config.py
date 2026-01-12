@@ -15,7 +15,8 @@ loaded = load_dotenv(dotenv_path=ENV_PATH, override=True)
 #print("✅ load_dotenv loaded? =", loaded)
 
 def _split_csv(value: str) -> list[str]:
-    return [v.strip() for v in value.split(",") if v.strip()]
+    return [v.strip().rstrip("/") for v in value.split(",") if v.strip()]
+
 
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai").lower()
 
