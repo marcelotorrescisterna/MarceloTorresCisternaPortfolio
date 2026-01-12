@@ -7,9 +7,6 @@ export async function streamChatMessage({ session_id, message, history, onDelta 
     body: JSON.stringify({ session_id, message, history }),
   });
 
-  console.log("================== SENDING REQUEST TO ===================")
-  console.log(`${API_URL}/chat/stream`)
-
   if (!res.ok) {
     const text = await res.text().catch(() => "");
     throw new Error(`API error ${res.status}: ${text || "No details"}`);
