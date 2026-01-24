@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Instalando dependencias (si fuera necesario)"
+  build:
+    commands:
+      - echo "=== LISTANDO ARCHIVOS QUE LLEGAN DESDE CODEPIPELINE ==="
+      - pwd
+      - ls -R
+      - echo "Creando carpeta build y empaquetando app/"
+      - mkdir -p build
+      - zip -r build/app_artifact.zip app/ || echo "Carpeta app no encontrada"
+      - echo "Generando archivo de info del build"
+      - 'echo "Build generado en: $(date)" > build/build_info.txt'
+      - 'echo "Archivos incluidos en el zip:" >> build/build_info.txt'
+      - 'ls app/ >> build/build_info.txt || echo "No se pudo listar app/" >> build/build_info.txt'
+
+artifacts:
+  files:
+    - build/app_artifact.zip
+    - build/build_info.txt
