@@ -55,6 +55,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+print(f"COOOORS ORIGINS : {config.CORS_ORIGINS}")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.CORS_ORIGINS,
