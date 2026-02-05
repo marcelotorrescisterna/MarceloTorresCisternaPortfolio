@@ -59,7 +59,7 @@ print(f"COOOORS ORIGINS : {config.CORS_ORIGINS}")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.CORS_ORIGINS,
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
