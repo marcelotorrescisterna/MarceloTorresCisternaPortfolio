@@ -3,7 +3,7 @@ import styles from './ChatWidget.module.css'
 import MessageBubble from './MessageBubble'
 import TypingIndicator from './TypingIndicator'
 import { getOrCreateSessionId } from '../utils/session'
-import { streamChatMessage } from '../api/chatAPIStream'
+import { streamChatMessage } from '../api/chatApiStream'
 
 const initialMessages = [
   {
