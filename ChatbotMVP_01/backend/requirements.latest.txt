@@ -1,0 +1,10 @@
+﻿fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langchain-aws
+boto3

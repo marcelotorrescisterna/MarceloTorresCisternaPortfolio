@@ -1,18 +1,13 @@
-import styles from "./MessageBubble.module.css";
+import styles from './MessageBubble.module.css'
 
-export default function MessageBubble({ role, content, time }) {
-  const isUser = role === "user";
+function MessageBubble({ message }) {
+  const isUser = message.role === 'user'
 
   return (
-    <div
-      className={`${styles.wrapper} ${
-        isUser ? styles.user : styles.assistant
-      }`}
-    >
-      <div className={styles.bubble}>
-        <div>{content}</div>
-        <div className={styles.time}>{time}</div>
-      </div>
+    <div className={`${styles.bubble} ${isUser ? styles.user : styles.assistant}`}>
+      <p>{message.content}</p>
     </div>
-  );
+  )
 }
+
+export default MessageBubble
